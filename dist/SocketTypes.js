@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.More = exports.SocketMessage = void 0;
 var SocketMessage;
 (function (SocketMessage) {
     SocketMessage["WELCOME"] = "W";

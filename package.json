@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "dist": "tsc --declaration"
   },
   "repository": {
     "type": "git",
