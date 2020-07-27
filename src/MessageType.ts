@@ -1,5 +1,6 @@
 export enum MessageType {
   WELCOME = 'W',
+  CHATS = 'C',
   JOINCHAT = 'JC',
   LEAVECHAT = 'LC',
   MATCH = 'M',
