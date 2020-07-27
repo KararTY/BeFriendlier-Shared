@@ -34,6 +34,6 @@ export interface UNMATCH extends BASE {
     matchUserTwitch: NameAndId;
 }
 export interface JOINCHANNEL extends BASE {
-    userTwitch: NameAndId;
+    joinUserTwitch: NameAndId;
 }
 export {};
