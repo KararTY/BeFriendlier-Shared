@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v1.1.1...v2.0.0) (2020-07-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* Renamed import SocketMessage to MessageType
+
+### Features
+
+* Add MessageType.CHATS ([f6d316d](https://github.com/KararTY/BeFriendlier-Shared/commit/f6d316d5de1ad059b2de76522484d9e1e2c7b710))
+* Renamed import SocketMessage to MessageType ([af121e2](https://github.com/KararTY/BeFriendlier-Shared/commit/af121e2f6c47a582ee02e291aac23aac8ea385ac))
+
 ### [1.1.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v1.1.0...v1.1.1) (2020-07-26)
 
 ## 1.1.0 (2020-07-26)
