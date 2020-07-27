@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dist": "tsc --declaration",
-    "bump": "standard-version"
+    "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
