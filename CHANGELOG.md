@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v3.0.0...v3.1.0) (2020-07-27)
+
+
+### Features
+
+* Add `JOINCHANNEL` and `NameAndId`. ([e2a8a9e](https://github.com/KararTY/BeFriendlier-Shared/commit/e2a8a9ed9156163149c3d998a2fc117783d98626))
+
 ## [3.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v1.1.1...v3.0.0) (2020-07-27)
 
 
