@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v3.1.0...v4.0.0) (2020-07-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* Variable renamed to `joinUserTwitch`.
+
+### Features
+
+* Added rimraf to delete dist folder. ([ae0d93e](https://github.com/KararTY/BeFriendlier-Shared/commit/ae0d93e31f59c087f58a073654f9d8ba78e1a524))
+* Rename bump npm script to release. ([0c95bfa](https://github.com/KararTY/BeFriendlier-Shared/commit/0c95bfa0c8881c11a5f71ad4af51d58dd3554849))
+
+
+### Bug Fixes
+
+* Variable renamed to `joinUserTwitch`. ([b81e545](https://github.com/KararTY/BeFriendlier-Shared/commit/b81e5455643426c9e05f2b866c89d9b393280b67))
+
 ## [3.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v3.0.0...v3.1.0) (2020-07-27)
 
 
