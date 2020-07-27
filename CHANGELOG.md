@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.0.0...v4.1.0) (2020-07-27)
+
+
+### Features
+
+* Add `REQUESTRESPONSE` ([2fb1495](https://github.com/KararTY/BeFriendlier-Shared/commit/2fb1495350ad4603d67a4a4a23c7269a6f262dfd))
+
 ## [4.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v3.1.0...v4.0.0) (2020-07-27)
 
 
