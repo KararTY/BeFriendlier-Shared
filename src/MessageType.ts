@@ -13,15 +13,14 @@ export enum MessageType {
   TAKEABREAK = 'TAB'
 }
 
+interface NameAndId {
+  name: string
+  id: string
+}
+
 export interface BASE {
-  userTwitch: {
-    name: string
-    id: string
-  }
-  channelTwitch: {
-    name: string
-    id: string
-  }
+  userTwitch: NameAndId
+  channelTwitch: NameAndId
   result?: any
 }
 
@@ -37,8 +36,9 @@ export interface ROLLMATCH extends BASE {
 }
 
 export interface UNMATCH extends BASE {
-  matchUserTwitch: {
-    name: string
-    id: string
-  }
+  matchUserTwitch: NameAndId
+}
+
+export interface JOINCHANNEL extends BASE {
+  userTwitch: NameAndId
 }

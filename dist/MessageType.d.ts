@@ -12,15 +12,13 @@ export declare enum MessageType {
     UNREGISTERED = "UR",
     TAKEABREAK = "TAB"
 }
+interface NameAndId {
+    name: string;
+    id: string;
+}
 export interface BASE {
-    userTwitch: {
-        name: string;
-        id: string;
-    };
-    channelTwitch: {
-        name: string;
-        id: string;
-    };
+    userTwitch: NameAndId;
+    channelTwitch: NameAndId;
     result?: any;
 }
 export declare enum More {
@@ -33,8 +31,9 @@ export interface ROLLMATCH extends BASE {
     more: More;
 }
 export interface UNMATCH extends BASE {
-    matchUserTwitch: {
-        name: string;
-        id: string;
-    };
+    matchUserTwitch: NameAndId;
 }
+export interface JOINCHANNEL extends BASE {
+    userTwitch: NameAndId;
+}
+export {};
