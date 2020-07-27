@@ -1,4 +1,4 @@
-export enum SocketMessage {
+export enum MessageType {
   WELCOME = 'W',
   JOINCHAT = 'JC',
   LEAVECHAT = 'LC',
