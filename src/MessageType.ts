@@ -42,3 +42,8 @@ export interface UNMATCH extends BASE {
 export interface JOINCHANNEL extends BASE {
   joinUserTwitch: NameAndId
 }
+
+export interface REQUESTRESPONSE {
+  requestTime: string
+  value: any
+}
