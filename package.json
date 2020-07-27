@@ -5,7 +5,7 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "dist": "tsc --declaration",
+    "dist": "rimraf dist && tsc --declaration ",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KararTY/BeFriendlier-Shared#readme",
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "standard-version": "^8.0.2",
     "typescript": "^3.9.7"
   }
