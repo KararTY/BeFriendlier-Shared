@@ -1,12 +1,12 @@
 {
   "name": "befriendlier-shared",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "",
   "private": true,
   "main": "dist/index.js",
   "scripts": {
     "dist": "rimraf dist && tsc --declaration",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "npm run dist && standard-version && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.1.0...v4.2.0) (2020-07-29)
+
+
+### Features
+
+* Add MISMATCH ([f530742](https://github.com/KararTY/BeFriendlier-Shared/commit/f530742d4d0849b7d86e2985cbd55373d97137ba))
+
+
+### Bug Fixes
+
+* One consistent gitignore file in all projects ([2d48eb3](https://github.com/KararTY/BeFriendlier-Shared/commit/2d48eb3b07a878be54bb6e0b9c0ca16153804e18))
+
 ## [4.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.0.0...v4.1.0) (2020-07-27)
 
 
