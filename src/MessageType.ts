@@ -7,6 +7,7 @@ export enum MessageType {
   UNMATCH = 'UM',
   ROLLMATCH = 'RM',
   SUCCESS = 'S',
+  MISMATCH = 'MM',
   ADDEMOTES = 'AE',
   ERROR = 'ERR',
   UNREGISTERED = 'UR',
@@ -28,8 +29,7 @@ export enum More {
   NONE = 'NONE',
   BIO = 'BIO',
   FAVORITEEMOTES = 'FE',
-  FAVORITESTREAMERS = 'FS',
-  MISMATCH = 'MM'
+  FAVORITESTREAMERS = 'FS'
 }
 
 export interface ROLLMATCH extends BASE {
