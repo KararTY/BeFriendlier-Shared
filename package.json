@@ -5,7 +5,7 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "dist": "rimraf dist && tsc --declaration ",
+    "dist": "rimraf dist && tsc --declaration",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
