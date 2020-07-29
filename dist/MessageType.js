@@ -11,6 +11,7 @@ var MessageType;
     MessageType["UNMATCH"] = "UM";
     MessageType["ROLLMATCH"] = "RM";
     MessageType["SUCCESS"] = "S";
+    MessageType["MISMATCH"] = "MM";
     MessageType["ADDEMOTES"] = "AE";
     MessageType["ERROR"] = "ERR";
     MessageType["UNREGISTERED"] = "UR";

@@ -7,6 +7,7 @@ export declare enum MessageType {
     UNMATCH = "UM",
     ROLLMATCH = "RM",
     SUCCESS = "S",
+    MISMATCH = "MM",
     ADDEMOTES = "AE",
     ERROR = "ERR",
     UNREGISTERED = "UR",
