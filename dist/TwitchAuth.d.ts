@@ -14,32 +14,33 @@ export interface TwitchAuthBody {
     access_token: string;
     refresh_token: string;
     expires_in: number;
-    scope?: string;
+    scope: string[];
     token_type: string;
 }
 export interface TwitchValidateBody {
     client_id: string;
     expires_in: number;
     login: string;
-    scopes: string[];
+    scope: string[];
     user_id: string;
 }
 interface Config {
     clientToken: string;
     clientSecret: string;
     redirectURI: string;
-    scopes: string[];
+    scope: string[];
     headers: Headers;
 }
 export declare class TwitchAuth {
     private readonly clientToken;
     private readonly clientSecret;
     private readonly redirectURI;
-    private readonly scopes;
+    private readonly scope;
     private readonly headers;
     private readonly logger;
     constructor(config: Config, loggerLevel: string);
     requestToken(code: string): Promise<TwitchAuthBody | null>;
+    requestAppToken(): Promise<TwitchAuthBody | null>;
     getUser(token: string): Promise<TwitchUsersBody | null>;
     getUser(token: string, usernames?: string[]): Promise<TwitchUsersBody[] | null>;
     refreshToken(token: string): Promise<TwitchAuthBody | null>;

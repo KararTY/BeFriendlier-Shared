@@ -11,7 +11,7 @@ class TwitchAuth {
         this.clientToken = config.clientToken;
         this.clientSecret = config.clientSecret;
         this.redirectURI = config.redirectURI;
-        this.scopes = config.scopes.join(' ');
+        this.scope = config.scope.join(' ');
         this.headers = config.headers;
         this.logger = new standalone_1.Logger({ enabled: true, name: 'befriendly-shared', level: loggerLevel });
     }
@@ -22,7 +22,7 @@ class TwitchAuth {
             grant_type: 'authorization_code',
             code,
             redirect_uri: this.redirectURI,
-            scope: this.scopes,
+            scope: this.scope,
         };
         try {
             const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
@@ -34,6 +34,26 @@ class TwitchAuth {
         }
         catch (error) {
             this.logger.error(null, 'Twitch.requestToken(): %O', error.response.body);
+            return null;
+        }
+    }
+    async requestAppToken() {
+        const searchParams = {
+            client_id: this.clientToken,
+            client_secret: this.clientSecret,
+            grant_type: 'client_credentials',
+            scope: this.scope,
+        };
+        try {
+            const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
+                headers: Object.assign({}, this.headers),
+                searchParams,
+                responseType: 'json',
+            });
+            return body;
+        }
+        catch (error) {
+            this.logger.error(null, 'Twitch.requestAppToken(): %O', error.response.body);
             return null;
         }
     }
@@ -61,7 +81,7 @@ class TwitchAuth {
             client_secret: this.clientSecret,
             grant_type: 'refresh_token',
             refresh_token: encodeURI(token),
-            scope: this.scopes,
+            scope: this.scope,
         };
         try {
             const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
@@ -93,7 +113,7 @@ class TwitchAuth {
         let url = 'https://id.twitch.tv/oauth2/authorize?response_type=code';
         url += `&client_id=${this.clientToken}`;
         url += `&redirect_uri=${this.redirectURI}`;
-        url += `&scope=${this.scopes}`;
+        url += `&scope=${this.scope}`;
         url += '&force_verify=true';
         url += `&state=${csrfToken}`;
         return url;
