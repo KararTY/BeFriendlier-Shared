@@ -20,5 +20,9 @@
     "rimraf": "^3.0.2",
     "standard-version": "^8.0.2",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@adonisjs/logger": "^2.1.0",
+    "got": "^11.5.1"
   }
 }
