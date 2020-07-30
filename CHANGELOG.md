@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.5](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.4...v4.3.5) (2020-07-30)
+
+
+### Bug Fixes
+
+* Expanded on tsconfig. ES2020 ([428f9be](https://github.com/KararTY/BeFriendlier-Shared/commit/428f9be387d29448c1968369f149a61ffab901d4))
+
 ### [4.3.4](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.3...v4.3.4) (2020-07-30)
 
 
