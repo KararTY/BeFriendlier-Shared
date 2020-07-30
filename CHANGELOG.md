@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.4](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.3...v4.3.4) (2020-07-30)
+
+
+### Bug Fixes
+
+* Hopefully last attempt to make this work. ([fecc934](https://github.com/KararTY/BeFriendlier-Shared/commit/fecc93493d2259a8cd7325a22c039d7a19d2cb1a))
+
 ### [4.3.3](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.2...v4.3.3) (2020-07-30)
 
 
