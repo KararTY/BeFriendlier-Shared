@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KararTY/BeFriendlier-Shared#readme",
   "devDependencies": {
+    "adonis-preset-ts": "^1.0.4",
     "rimraf": "^3.0.2",
     "standard-version": "^8.0.2",
     "typescript": "^3.9.7"

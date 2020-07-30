@@ -29,7 +29,7 @@ export interface TwitchValidateBody {
   user_id: string
 }
 
-export default class TwitchAuth {
+export class TwitchAuth {
   private readonly token: string
   private readonly secret: string
   private readonly redirectURI: string

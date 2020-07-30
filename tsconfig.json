@@ -1,7 +1,16 @@
 {
+  "include": [
+    "src/**/*"
+  ],
+  "extends": "./node_modules/adonis-preset-ts/tsconfig",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "./src/",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "incremental": true,
+    "sourceMap": true,
+    "types": [
+      "node"
+    ]
   }
 }

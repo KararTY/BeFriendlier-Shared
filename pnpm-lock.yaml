@@ -2,6 +2,7 @@ dependencies:
   '@adonisjs/logger': 2.1.0
   got: 11.5.1
 devDependencies:
+  adonis-preset-ts: 1.0.4
   rimraf: 3.0.2
   standard-version: 8.0.2
   typescript: 3.9.7
@@ -136,6 +137,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-anmQQ3ynNtXhKI25K9MmbV9csqo=
+  /adonis-preset-ts/1.0.4:
+    dev: true
+    resolution:
+      integrity: sha512-BpDCRLjsSO/k+pWK6xPdTMuCdc6HUird5TUExHHiYeeMzC5BcQKblpaCBN/7kh+E+l8GyeN22yuHXFdm4aLt2Q==
   /ansi-regex/5.0.0:
     dev: true
     engines:
@@ -1983,6 +1988,7 @@ packages:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
   '@adonisjs/logger': ^2.1.0
+  adonis-preset-ts: ^1.0.4
   got: ^11.5.1
   rimraf: ^3.0.2
   standard-version: ^8.0.2
