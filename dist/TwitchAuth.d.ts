@@ -1,3 +1,4 @@
+import { Headers } from 'got';
 export interface TwitchUsersBody {
     id: string;
     login: string;
@@ -23,14 +24,21 @@ export interface TwitchValidateBody {
     scopes: string[];
     user_id: string;
 }
+interface Config {
+    clientToken: string;
+    clientSecret: string;
+    redirectURI: string;
+    scopes: string[];
+    headers: Headers;
+}
 export declare class TwitchAuth {
-    private readonly token;
-    private readonly secret;
+    private readonly clientToken;
+    private readonly clientSecret;
     private readonly redirectURI;
     private readonly scopes;
     private readonly headers;
     private readonly logger;
-    constructor(config: any, loggerLevel: string);
+    constructor(config: Config, loggerLevel: string);
     requestToken(code: string): Promise<TwitchAuthBody | null>;
     getUser(token: string): Promise<TwitchUsersBody | null>;
     getUser(token: string, usernames?: string[]): Promise<TwitchUsersBody[] | null>;
@@ -38,3 +46,4 @@ export declare class TwitchAuth {
     validateToken(token: string): Promise<TwitchValidateBody | null>;
     authorizationURL(csrfToken: string): string;
 }
+export {};

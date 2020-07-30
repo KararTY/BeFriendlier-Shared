@@ -29,17 +29,25 @@ export interface TwitchValidateBody {
   user_id: string
 }
 
+interface Config {
+  clientToken: string
+  clientSecret: string
+  redirectURI: string
+  scopes: string[]
+  headers: Headers
+}
+
 export class TwitchAuth {
-  private readonly token: string
-  private readonly secret: string
+  private readonly clientToken: string
+  private readonly clientSecret: string
   private readonly redirectURI: string
   private readonly scopes: string
   private readonly headers: Headers
-  private readonly logger
+  private readonly logger: Logger
 
-  constructor (config, loggerLevel: string) {
-    this.token = config.clientToken
-    this.secret = config.clientSecret
+  constructor (config: Config, loggerLevel: string) {
+    this.clientToken = config.clientToken
+    this.clientSecret = config.clientSecret
     this.redirectURI = config.redirectURI
     this.scopes = config.scopes.join(' ')
     this.headers = config.headers
@@ -48,8 +56,8 @@ export class TwitchAuth {
 
   public async requestToken (code: string): Promise<TwitchAuthBody | null> {
     const searchParams = {
-      client_id: this.token,
-      client_secret: this.secret,
+      client_id: this.clientToken,
+      client_secret: this.clientSecret,
       grant_type: 'authorization_code',
       code,
       redirect_uri: this.redirectURI,
@@ -76,7 +84,7 @@ export class TwitchAuth {
       const { body }: any = await fetch.get(`https://api.twitch.tv/helix/users?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&login=' + i : 'login=' + i).join('') : ''}`, {
         headers: {
           ...this.headers,
-          'Client-ID': this.token,
+          'Client-ID': this.clientToken,
           Authorization: `Bearer ${token}`,
         },
         responseType: 'json',
@@ -95,8 +103,8 @@ export class TwitchAuth {
 
   public async refreshToken (token: string): Promise<TwitchAuthBody | null> {
     const searchParams = {
-      client_id: this.token,
-      client_secret: this.secret,
+      client_id: this.clientToken,
+      client_secret: this.clientSecret,
       grant_type: 'refresh_token',
       refresh_token: encodeURI(token), // Per https://dev.twitch.tv/docs/authentication/#refreshing-access-tokens:~:text=URL%20encode
       scope: this.scopes,
@@ -121,7 +129,7 @@ export class TwitchAuth {
       const { body }: any = await fetch.get('https://id.twitch.tv/oauth2/validate', {
         headers: {
           ...this.headers,
-          'Client-ID': this.token,
+          'Client-ID': this.clientToken,
           Authorization: `OAuth ${token}`,
         },
         responseType: 'json',
@@ -137,7 +145,7 @@ export class TwitchAuth {
   public authorizationURL (csrfToken: string) {
     let url = 'https://id.twitch.tv/oauth2/authorize?response_type=code'
 
-    url += `&client_id=${this.token}`
+    url += `&client_id=${this.clientToken}`
     url += `&redirect_uri=${this.redirectURI}`
     url += `&scope=${this.scopes}`
     url += '&force_verify=true'

@@ -8,8 +8,8 @@ const got_1 = __importDefault(require("got"));
 const standalone_1 = require("@adonisjs/logger/build/standalone");
 class TwitchAuth {
     constructor(config, loggerLevel) {
-        this.token = config.clientToken;
-        this.secret = config.clientSecret;
+        this.clientToken = config.clientToken;
+        this.clientSecret = config.clientSecret;
         this.redirectURI = config.redirectURI;
         this.scopes = config.scopes.join(' ');
         this.headers = config.headers;
@@ -17,8 +17,8 @@ class TwitchAuth {
     }
     async requestToken(code) {
         const searchParams = {
-            client_id: this.token,
-            client_secret: this.secret,
+            client_id: this.clientToken,
+            client_secret: this.clientSecret,
             grant_type: 'authorization_code',
             code,
             redirect_uri: this.redirectURI,
@@ -40,7 +40,7 @@ class TwitchAuth {
     async getUser(token, usernames) {
         try {
             const { body } = await got_1.default.get(`https://api.twitch.tv/helix/users?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&login=' + i : 'login=' + i).join('') : ''}`, {
-                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.token, Authorization: `Bearer ${token}` }),
+                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `Bearer ${token}` }),
                 responseType: 'json',
             });
             if (usernames instanceof Array) {
@@ -57,8 +57,8 @@ class TwitchAuth {
     }
     async refreshToken(token) {
         const searchParams = {
-            client_id: this.token,
-            client_secret: this.secret,
+            client_id: this.clientToken,
+            client_secret: this.clientSecret,
             grant_type: 'refresh_token',
             refresh_token: encodeURI(token),
             scope: this.scopes,
@@ -79,7 +79,7 @@ class TwitchAuth {
     async validateToken(token) {
         try {
             const { body } = await got_1.default.get('https://id.twitch.tv/oauth2/validate', {
-                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.token, Authorization: `OAuth ${token}` }),
+                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `OAuth ${token}` }),
                 responseType: 'json',
             });
             return body;
@@ -91,7 +91,7 @@ class TwitchAuth {
     }
     authorizationURL(csrfToken) {
         let url = 'https://id.twitch.tv/oauth2/authorize?response_type=code';
-        url += `&client_id=${this.token}`;
+        url += `&client_id=${this.clientToken}`;
         url += `&redirect_uri=${this.redirectURI}`;
         url += `&scope=${this.scopes}`;
         url += '&force_verify=true';
