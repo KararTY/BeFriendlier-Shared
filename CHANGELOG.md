@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.3.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.2.3...v4.3.0) (2020-07-30)
+
+
+### Features
+
+* Add Twitch login functionality from web. ([5faba98](https://github.com/KararTY/BeFriendlier-Shared/commit/5faba987a853c6e20f601d5af1485a43a8b9ec98))
+
 ### [4.2.3](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.2.2...v4.2.3) (2020-07-29)
 
 
