@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.6](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.5...v4.3.6) (2020-07-30)
+
+
+### Bug Fixes
+
+* Fix build procedure & refactor TwitchAuth. ([a4db7ec](https://github.com/KararTY/BeFriendlier-Shared/commit/a4db7ec94522bb28111f3cc11c9b48bcd5166b0e))
+
 ### [4.3.5](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.4...v4.3.5) (2020-07-30)
 
 
