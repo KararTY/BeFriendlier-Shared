@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.6...v4.4.0) (2020-07-30)
+
+
+### Features
+
+* Add requestAppToken. ([8679884](https://github.com/KararTY/BeFriendlier-Shared/commit/86798842c2bb9e68090f3119bc155269a0589b67))
+
 ### [4.3.6](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.3.5...v4.3.6) (2020-07-30)
 
 
