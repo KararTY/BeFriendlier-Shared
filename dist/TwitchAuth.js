@@ -52,8 +52,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var got_1 = __importDefault(require("got"));
 var standalone_1 = require("@adonisjs/logger/build/standalone");
-var Client = /** @class */ (function () {
-    function Client(config, loggerLevel) {
+var TwitchAuth = /** @class */ (function () {
+    function TwitchAuth(config, loggerLevel) {
         this.token = config.clientToken;
         this.secret = config.clientSecret;
         this.redirectURI = config.redirectURI;
@@ -61,7 +61,7 @@ var Client = /** @class */ (function () {
         this.headers = config.headers;
         this.logger = new standalone_1.Logger({ enabled: true, name: 'befriendly-shared', level: loggerLevel });
     }
-    Client.prototype.requestToken = function (code) {
+    TwitchAuth.prototype.requestToken = function (code) {
         return __awaiter(this, void 0, void 0, function () {
             var searchParams, body, error_1;
             return __generator(this, function (_a) {
@@ -95,7 +95,7 @@ var Client = /** @class */ (function () {
             });
         });
     };
-    Client.prototype.getUser = function (token, usernames) {
+    TwitchAuth.prototype.getUser = function (token, usernames) {
         return __awaiter(this, void 0, void 0, function () {
             var body, error_2;
             return __generator(this, function (_a) {
@@ -124,7 +124,7 @@ var Client = /** @class */ (function () {
             });
         });
     };
-    Client.prototype.refreshToken = function (token) {
+    TwitchAuth.prototype.refreshToken = function (token) {
         return __awaiter(this, void 0, void 0, function () {
             var searchParams, body, error_3;
             return __generator(this, function (_a) {
@@ -157,7 +157,7 @@ var Client = /** @class */ (function () {
             });
         });
     };
-    Client.prototype.validateToken = function (token) {
+    TwitchAuth.prototype.validateToken = function (token) {
         return __awaiter(this, void 0, void 0, function () {
             var body, error_4;
             return __generator(this, function (_a) {
@@ -180,7 +180,7 @@ var Client = /** @class */ (function () {
             });
         });
     };
-    Client.prototype.authorizationURL = function (csrfToken) {
+    TwitchAuth.prototype.authorizationURL = function (csrfToken) {
         var url = 'https://id.twitch.tv/oauth2/authorize?response_type=code';
         url += "&client_id=" + this.token;
         url += "&redirect_uri=" + this.redirectURI;
@@ -189,6 +189,6 @@ var Client = /** @class */ (function () {
         url += "&state=" + csrfToken;
         return url;
     };
-    return Client;
+    return TwitchAuth;
 }());
-exports["default"] = Client;
+exports["default"] = TwitchAuth;

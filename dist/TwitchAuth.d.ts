@@ -23,7 +23,7 @@ export interface TwitchValidateBody {
     scopes: string[];
     user_id: string;
 }
-export default class Client {
+export default class TwitchAuth {
     private readonly token;
     private readonly secret;
     private readonly redirectURI;
