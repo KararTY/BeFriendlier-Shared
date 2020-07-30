@@ -1,2 +1,2 @@
 export * from './MessageType'
-export * from './TwitchLogin'
+export * as TwitchAuth from './TwitchAuth'
