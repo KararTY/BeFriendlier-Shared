@@ -13,7 +13,7 @@ export declare enum MessageType {
     UNREGISTERED = "UR",
     TAKEABREAK = "TAB"
 }
-interface NameAndId {
+export interface NameAndId {
     name: string;
     id: string;
 }
@@ -41,4 +41,3 @@ export interface REQUESTRESPONSE {
     requestTime: string;
     value: any;
 }
-export {};

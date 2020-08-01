@@ -14,7 +14,7 @@ export enum MessageType {
   TAKEABREAK = 'TAB'
 }
 
-interface NameAndId {
+export interface NameAndId {
   name: string
   id: string
 }
