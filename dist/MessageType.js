@@ -4,6 +4,7 @@ exports.More = exports.MessageType = void 0;
 var MessageType;
 (function (MessageType) {
     MessageType["WELCOME"] = "W";
+    MessageType["PING"] = "P";
     MessageType["CHATS"] = "C";
     MessageType["JOINCHAT"] = "JC";
     MessageType["LEAVECHAT"] = "LC";

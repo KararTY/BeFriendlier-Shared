@@ -1,5 +1,6 @@
 export enum MessageType {
   WELCOME = 'W',
+  PING = 'P',
   CHATS = 'C',
   JOINCHAT = 'JC',
   LEAVECHAT = 'LC',
