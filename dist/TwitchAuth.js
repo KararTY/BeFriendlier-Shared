@@ -13,7 +13,12 @@ class TwitchAuth {
         this.redirectURI = config.redirectURI;
         this.scope = config.scope.join(' ');
         this.headers = config.headers;
-        this.logger = new standalone_1.Logger({ enabled: true, name: 'befriendly-shared', level: loggerLevel });
+        this.logger = new standalone_1.Logger({
+            enabled: true,
+            name: 'befriendly-shared',
+            level: loggerLevel,
+            prettyPrint: process.env.NODE_ENV === 'development',
+        });
     }
     async requestToken(code) {
         const searchParams = {
@@ -33,7 +38,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error(null, 'Twitch.requestToken(): %O', error.response.body);
+            this.logger.error('Twitch.requestToken(): %O', error.response.body);
             return null;
         }
     }
@@ -53,7 +58,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error(null, 'Twitch.requestAppToken(): %O', error.response.body);
+            this.logger.error('Twitch.requestAppToken(): %O', error.response.body);
             return null;
         }
     }
@@ -71,7 +76,7 @@ class TwitchAuth {
             }
         }
         catch (error) {
-            this.logger.error(null, 'Twitch.getUser(): %O', error.response.body);
+            this.logger.error('Twitch.getUser(): %O', error.response.body);
             return null;
         }
     }
@@ -92,7 +97,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error(null, 'Twitch.refreshToken(): %O', error.response.body);
+            this.logger.error('Twitch.refreshToken(): %O', error.response.body);
             return null;
         }
     }
@@ -105,7 +110,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error(null, 'Twitch.validateToken() %O', error.response.body);
+            this.logger.error('Twitch.validateToken() %O', error.response.body);
             return null;
         }
     }

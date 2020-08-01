@@ -51,7 +51,12 @@ export class TwitchAuth {
     this.redirectURI = config.redirectURI
     this.scope = config.scope.join(' ')
     this.headers = config.headers
-    this.logger = new Logger({ enabled: true, name: 'befriendly-shared', level: loggerLevel })
+    this.logger = new Logger({
+      enabled: true,
+      name: 'befriendly-shared',
+      level: loggerLevel,
+      prettyPrint: process.env.NODE_ENV === 'development',
+    })
   }
 
   public async requestToken (code: string): Promise<TwitchAuthBody | null> {
@@ -72,7 +77,7 @@ export class TwitchAuth {
       })
       return body
     } catch (error) {
-      this.logger.error(null, 'Twitch.requestToken(): %O', error.response.body)
+      this.logger.error('Twitch.requestToken(): %O', error.response.body)
       return null
     }
   }
@@ -93,7 +98,7 @@ export class TwitchAuth {
       })
       return body
     } catch (error) {
-      this.logger.error(null, 'Twitch.requestAppToken(): %O', error.response.body)
+      this.logger.error('Twitch.requestAppToken(): %O', error.response.body)
       return null
     }
   }
@@ -117,7 +122,7 @@ export class TwitchAuth {
         return body.data[0] !== undefined ? body.data[0] as TwitchUsersBody : null
       }
     } catch (error) {
-      this.logger.error(null, 'Twitch.getUser(): %O', error.response.body)
+      this.logger.error('Twitch.getUser(): %O', error.response.body)
       return null
     }
   }
@@ -140,7 +145,7 @@ export class TwitchAuth {
 
       return body as TwitchAuthBody
     } catch (error) {
-      this.logger.error(null, 'Twitch.refreshToken(): %O', error.response.body)
+      this.logger.error('Twitch.refreshToken(): %O', error.response.body)
       return null
     }
   }
@@ -158,7 +163,7 @@ export class TwitchAuth {
 
       return body as TwitchValidateBody
     } catch (error) {
-      this.logger.error(null, 'Twitch.validateToken() %O', error.response.body)
+      this.logger.error('Twitch.validateToken() %O', error.response.body)
       return null
     }
   }
