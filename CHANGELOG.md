@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.4.2...v4.5.0) (2020-08-01)
+
+
+### Features
+
+* Add `PING` to MessageType enum. ([050a4bb](https://github.com/KararTY/BeFriendlier-Shared/commit/050a4bb6b641ac90f9a269c09a8ae1676c48b2cc))
+
 ### [4.4.2](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.4.1...v4.4.2) (2020-08-01)
 
 
