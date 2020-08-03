@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.5.0...v5.0.0) (2020-08-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename JOINCHANNEL to JOINCHAT.
+
+### Bug Fixes
+
+* Rename JOINCHANNEL to JOINCHAT. ([9737980](https://github.com/KararTY/BeFriendlier-Shared/commit/9737980a6639ef90134f36cb675da1badc93e838))
+
 ## [4.5.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.4.2...v4.5.0) (2020-08-01)
 
 
