@@ -35,7 +35,7 @@ export interface ROLLMATCH extends BASE {
 export interface UNMATCH extends BASE {
     matchUserTwitch: NameAndId;
 }
-export interface JOINCHANNEL extends BASE {
+export interface JOINCHAT extends BASE {
     joinUserTwitch: NameAndId;
 }
 export interface REQUESTRESPONSE {
