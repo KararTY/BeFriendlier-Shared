@@ -38,6 +38,9 @@ export interface UNMATCH extends BASE {
 export interface JOINCHAT extends BASE {
     joinUserTwitch: NameAndId;
 }
+export interface LEAVECHAT extends BASE {
+    leaveUserTwitch: NameAndId;
+}
 export interface REQUESTRESPONSE {
     requestTime: string;
     value: any;
