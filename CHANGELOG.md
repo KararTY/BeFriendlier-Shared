@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.0.0...v5.1.0) (2020-08-08)
+
+
+### Features
+
+* Add LEAVECHAT ([9a6f851](https://github.com/KararTY/BeFriendlier-Shared/commit/9a6f851b4026b20d2c0777364721d40aab57ba63))
+
 ## [5.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v4.5.0...v5.0.0) (2020-08-03)
 
 
