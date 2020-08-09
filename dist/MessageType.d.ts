@@ -54,3 +54,7 @@ export interface Token {
     superSecret: string;
     refreshToken: string;
 }
+export interface Emote {
+    name: string;
+    id: string;
+}
