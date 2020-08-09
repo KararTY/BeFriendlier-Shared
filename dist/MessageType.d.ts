@@ -49,3 +49,8 @@ export interface REQUESTRESPONSE {
 export interface ADDEMOTES extends BASE {
     emotes: string[];
 }
+export interface Token {
+    expiration: Date;
+    superSecret: string;
+    refreshToken: string;
+}
