@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.1.0...v5.2.0) (2020-08-09)
+
+
+### Features
+
+* Add ADDEMOTES interface & TOKEN enum. ([236ef30](https://github.com/KararTY/BeFriendlier-Shared/commit/236ef306842b46602f307fdef95b0abf80671587))
+
 ## [5.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.0.0...v5.1.0) (2020-08-08)
 
 
