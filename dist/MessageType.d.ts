@@ -12,7 +12,8 @@ export declare enum MessageType {
     ADDEMOTES = "AE",
     ERROR = "ERR",
     UNREGISTERED = "UR",
-    TAKEABREAK = "TAB"
+    TAKEABREAK = "TAB",
+    TOKEN = "T"
 }
 export interface NameAndId {
     name: string;
@@ -44,4 +45,7 @@ export interface LEAVECHAT extends BASE {
 export interface REQUESTRESPONSE {
     requestTime: string;
     value: any;
+}
+export interface ADDEMOTES extends BASE {
+    emotes: string[];
 }

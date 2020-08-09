@@ -17,6 +17,7 @@ var MessageType;
     MessageType["ERROR"] = "ERR";
     MessageType["UNREGISTERED"] = "UR";
     MessageType["TAKEABREAK"] = "TAB";
+    MessageType["TOKEN"] = "T";
 })(MessageType = exports.MessageType || (exports.MessageType = {}));
 var More;
 (function (More) {
