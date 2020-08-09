@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.4.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.4.0...v5.4.1) (2020-08-09)
+
+
+### Bug Fixes
+
+* ADDEMOTES now uses Emote interface. ([20bfb7b](https://github.com/KararTY/BeFriendlier-Shared/commit/20bfb7b81e927100e03e1c1e93ef87cab15c2e40))
+
 ## [5.4.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.3.0...v5.4.0) (2020-08-09)
 
 

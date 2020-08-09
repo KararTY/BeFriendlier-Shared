@@ -1,6 +1,6 @@
 {
   "name": "befriendlier-shared",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "description": "",
   "private": true,
   "main": "dist/index.js",
