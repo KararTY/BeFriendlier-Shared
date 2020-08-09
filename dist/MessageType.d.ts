@@ -46,9 +46,6 @@ export interface REQUESTRESPONSE {
     requestTime: string;
     value: any;
 }
-export interface ADDEMOTES extends BASE {
-    emotes: string[];
-}
 export interface Token {
     expiration: Date;
     superSecret: string;
@@ -57,4 +54,7 @@ export interface Token {
 export interface Emote {
     name: string;
     id: string;
+}
+export interface ADDEMOTES extends BASE {
+    emotes: Emote[];
 }
