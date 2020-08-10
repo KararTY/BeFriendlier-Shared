@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.4.1...v6.0.0) (2020-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Change ADDEMOTES to EMOTES.
+
+### Bug Fixes
+
+* Add BIO ([d449b5a](https://github.com/KararTY/BeFriendlier-Shared/commit/d449b5a3ecc780245962f759180d3e1a7e6b4953))
+* Change ADDEMOTES to EMOTES. ([65f8750](https://github.com/KararTY/BeFriendlier-Shared/commit/65f875092aaecfa75c067bb9a5bf423e00135bbf))
+
 ### [5.4.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.4.0...v5.4.1) (2020-08-09)
 
 
