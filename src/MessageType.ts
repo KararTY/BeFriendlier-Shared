@@ -13,7 +13,8 @@ export enum MessageType {
   ERROR = 'ERR',
   UNREGISTERED = 'UR',
   TAKEABREAK = 'TAB',
-  TOKEN = 'T'
+  TOKEN = 'T',
+  BIO = 'B'
 }
 
 export interface NameAndId {
@@ -68,4 +69,8 @@ export interface Emote {
 
 export interface EMOTES extends BASE {
   emotes: Emote[]
+}
+
+export interface BIO extends BASE {
+  bio: string
 }
