@@ -9,11 +9,12 @@ export declare enum MessageType {
     ROLLMATCH = "RM",
     SUCCESS = "S",
     MISMATCH = "MM",
-    ADDEMOTES = "AE",
+    EMOTES = "E",
     ERROR = "ERR",
     UNREGISTERED = "UR",
     TAKEABREAK = "TAB",
-    TOKEN = "T"
+    TOKEN = "T",
+    BIO = "B"
 }
 export interface NameAndId {
     name: string;
@@ -55,6 +56,9 @@ export interface Emote {
     name: string;
     id: string;
 }
-export interface ADDEMOTES extends BASE {
+export interface EMOTES extends BASE {
     emotes: Emote[];
+}
+export interface BIO extends BASE {
+    bio: string;
 }

@@ -13,11 +13,12 @@ var MessageType;
     MessageType["ROLLMATCH"] = "RM";
     MessageType["SUCCESS"] = "S";
     MessageType["MISMATCH"] = "MM";
-    MessageType["ADDEMOTES"] = "AE";
+    MessageType["EMOTES"] = "E";
     MessageType["ERROR"] = "ERR";
     MessageType["UNREGISTERED"] = "UR";
     MessageType["TAKEABREAK"] = "TAB";
     MessageType["TOKEN"] = "T";
+    MessageType["BIO"] = "B";
 })(MessageType = exports.MessageType || (exports.MessageType = {}));
 var More;
 (function (More) {
