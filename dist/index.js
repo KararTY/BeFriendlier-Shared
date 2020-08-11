@@ -13,3 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./MessageType"), exports);
 __exportStar(require("./TwitchAuth"), exports);
 __exportStar(require("./PerspectiveAPI"), exports);
+//# sourceMappingURL=index.js.map
