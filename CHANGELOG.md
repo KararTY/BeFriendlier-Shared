@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.0.1...v6.1.0) (2020-08-11)
+
+
+### Features
+
+* Implement PerspectiveAPI. ([eadd041](https://github.com/KararTY/BeFriendlier-Shared/commit/eadd041cf6a5b5c32e979d311cc3ebeaab5d9c0b))
+
+
+### Bug Fixes
+
+* Proper error logging. ([c15e44d](https://github.com/KararTY/BeFriendlier-Shared/commit/c15e44daa29e1208ba3e64f739e12b3c5e302517))
+
 ### [6.0.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.0.0...v6.0.1) (2020-08-11)
 
 
