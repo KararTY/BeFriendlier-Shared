@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.3](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.2...v6.1.3) (2020-08-11)
+
+
+### Bug Fixes
+
+* attributeScores object values are type string* ([fc5517a](https://github.com/KararTY/BeFriendlier-Shared/commit/fc5517a24070588e5e8d80007b95be343fdf1986))
+
 ### [6.1.2](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.0...v6.1.2) (2020-08-11)
 
 
