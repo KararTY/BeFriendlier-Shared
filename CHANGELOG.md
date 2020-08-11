@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.0.0...v6.0.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* Add global to BASE interface, disable sourcemaps. ([41fda0e](https://github.com/KararTY/BeFriendlier-Shared/commit/41fda0e1b82ea31d22c23e547f852e5e10a7d55f))
+
 ## [6.0.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v5.4.1...v6.0.0) (2020-08-10)
 
 
