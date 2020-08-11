@@ -45,7 +45,7 @@ interface Config {
     token: string;
     headers: Headers;
 }
-export declare class TwitchAuth {
+export declare class PerspectiveAPI {
     private token;
     private enabled;
     private readonly headers;

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.0...v6.1.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* Actually export PerspectiveAPI. ([152af24](https://github.com/KararTY/BeFriendlier-Shared/commit/152af243d3c93cdb8477b75a52f32e1f0356b448))
+
 ## [6.1.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.0.1...v6.1.0) (2020-08-11)
 
 

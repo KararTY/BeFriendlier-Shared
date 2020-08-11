@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TwitchAuth = void 0;
+exports.PerspectiveAPI = void 0;
 const got_1 = __importDefault(require("got"));
 const standalone_1 = require("@adonisjs/logger/build/standalone");
-class TwitchAuth {
+class PerspectiveAPI {
     constructor(config, loggerLevel) {
         if (config.token) {
             this.token = config.token;
@@ -50,4 +50,4 @@ class TwitchAuth {
         return null;
     }
 }
-exports.TwitchAuth = TwitchAuth;
+exports.PerspectiveAPI = PerspectiveAPI;
