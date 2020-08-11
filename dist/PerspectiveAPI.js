@@ -29,8 +29,9 @@ class TwitchAuth {
                 comment: {
                     text: msgText
                 },
-                languages: ["en"],
-                requestedAttributes: { TOXICITY: {} }
+                requestedAttributes: {
+                    TOXICITY: {}
+                }
             };
             try {
                 const { body } = await got_1.default.post(`https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze`, {
@@ -46,7 +47,7 @@ class TwitchAuth {
                 return null;
             }
         }
-        return msgText;
+        return null;
     }
 }
 exports.TwitchAuth = TwitchAuth;
