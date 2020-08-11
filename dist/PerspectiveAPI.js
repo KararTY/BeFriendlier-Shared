@@ -8,10 +8,12 @@ const got_1 = __importDefault(require("got"));
 const standalone_1 = require("@adonisjs/logger/build/standalone");
 class PerspectiveAPI {
     constructor(config, loggerLevel) {
+        this.nextRequest = new Date();
         if (config.token) {
             this.token = config.token;
             this.enabled = true;
             this.headers = config.headers;
+            this.throttleInMs = config.throttleInMs;
             this.logger = new standalone_1.Logger({
                 enabled: true,
                 name: 'befriendly-shared-perspectiveapi',
@@ -22,6 +24,9 @@ class PerspectiveAPI {
     }
     async check(msgText) {
         if (this.enabled) {
+            this.nextRequest =
+                new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10));
+            await new Promise(resolve => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()));
             const searchParams = {
                 key: this.token
             };
