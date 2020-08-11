@@ -29,7 +29,7 @@ export interface PerspectiveAPIRequest {
 /** [PerspectiveAPI documentation](https://github.com/conversationai/perspectiveapi/blob/master/2-api/methods.md#analyzecomment-response) */
 export interface PerspectiveAPIResponse {
   attributeScores: {
-    string: {
+    [key: string]: {
       summaryScore: {
         /** Float */
         value: number

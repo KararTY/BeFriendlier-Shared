@@ -23,7 +23,7 @@ export interface PerspectiveAPIRequest {
 }
 export interface PerspectiveAPIResponse {
     attributeScores: {
-        string: {
+        [key: string]: {
             summaryScore: {
                 value: number;
                 type: string;
