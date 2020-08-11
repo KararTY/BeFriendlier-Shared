@@ -27,4 +27,3 @@ var More;
     More["FAVORITEEMOTES"] = "FE";
     More["FAVORITESTREAMERS"] = "FS";
 })(More = exports.More || (exports.More = {}));
-//# sourceMappingURL=MessageType.js.map

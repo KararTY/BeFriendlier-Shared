@@ -25,6 +25,7 @@ export interface NameAndId {
 export interface BASE {
   userTwitch: NameAndId
   channelTwitch: NameAndId
+  global?: boolean
   result?: any
 }
 

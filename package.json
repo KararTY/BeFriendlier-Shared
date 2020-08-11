@@ -5,7 +5,7 @@
   "private": true,
   "main": "dist/index.js",
   "scripts": {
-    "dist": "tsc --build --clean && tsc --declaration",
+    "dist": "rimraf dist/ && tsc -b && tsc --declaration",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
@@ -21,6 +21,7 @@
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-with-typescript": "^18.0.2",
     "eslint-plugin-adonis": "^1.0.14",
+    "rimraf": "^3.0.2",
     "standard-version": "^8.0.2",
     "typescript": "^3.9.7"
   },

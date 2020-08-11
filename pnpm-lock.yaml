@@ -6,6 +6,7 @@ devDependencies:
   eslint-config-standard: 14.1.1
   eslint-config-standard-with-typescript: 18.0.2_typescript@3.9.7
   eslint-plugin-adonis: 1.0.14_typescript@3.9.7
+  rimraf: 3.0.2
   standard-version: 8.0.2
   typescript: 3.9.7
 lockfileVersion: 5.1
@@ -1837,6 +1838,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xH48u3FTB9VsZw7R+vvgaKeLKzT6jOogbQhEe/jewwnZgzPcnyWui2Av6JpoYZF/91uueC+lqhWqeURw5/qhCw==
+  /rimraf/3.0.2:
+    dependencies:
+      glob: 7.1.6
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   /safe-buffer/5.1.2:
     dev: true
     resolution:
@@ -2206,5 +2214,6 @@ specifiers:
   eslint-config-standard-with-typescript: ^18.0.2
   eslint-plugin-adonis: ^1.0.14
   got: ^11.5.1
+  rimraf: ^3.0.2
   standard-version: ^8.0.2
   typescript: ^3.9.7

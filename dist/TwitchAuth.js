@@ -125,4 +125,3 @@ class TwitchAuth {
     }
 }
 exports.TwitchAuth = TwitchAuth;
-//# sourceMappingURL=TwitchAuth.js.map
