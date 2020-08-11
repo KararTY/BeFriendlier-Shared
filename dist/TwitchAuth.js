@@ -15,7 +15,7 @@ class TwitchAuth {
         this.headers = config.headers;
         this.logger = new standalone_1.Logger({
             enabled: true,
-            name: 'befriendly-shared',
+            name: 'befriendly-shared-twitchauth',
             level: loggerLevel,
             prettyPrint: process.env.NODE_ENV === 'development',
         });
@@ -38,7 +38,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error('Twitch.requestToken(): %O', error.response.body);
+            this.logger.error({ err: error }, 'Twitch.requestToken()');
             return null;
         }
     }
@@ -58,7 +58,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error('Twitch.requestAppToken(): %O', error.response.body);
+            this.logger.error({ err: error }, 'Twitch.requestAppToken()');
             return null;
         }
     }
@@ -76,7 +76,7 @@ class TwitchAuth {
             }
         }
         catch (error) {
-            this.logger.error('Twitch.getUser(): %O', error.response.body);
+            this.logger.error({ err: error }, 'Twitch.getUser()');
             return null;
         }
     }
@@ -97,7 +97,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error('Twitch.refreshToken(): %O', error.response.body);
+            this.logger.error({ err: error }, 'Twitch.refreshToken()');
             return null;
         }
     }
@@ -110,7 +110,7 @@ class TwitchAuth {
             return body;
         }
         catch (error) {
-            this.logger.error('Twitch.validateToken() %O', error.response.body);
+            this.logger.error({ err: error }, 'Twitch.validateToken()');
             return null;
         }
     }
