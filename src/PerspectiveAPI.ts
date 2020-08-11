@@ -52,20 +52,24 @@ export interface PerspectiveAPIResponse {
 
 interface Config {
   token: string
+  throttleInMs: number
   headers: Headers
 }
 
-export class TwitchAuth {
+export class PerspectiveAPI {
   private token: string
   private enabled: boolean
   private readonly headers: Headers
+  private throttleInMs: number
   private logger: Logger
+  private nextRequest: Date = new Date()
 
   constructor (config: Config, loggerLevel: string) {
     if (config.token) {
     this.token = config.token
       this.enabled = true
       this.headers = config.headers
+      this.throttleInMs = config.throttleInMs
       this.logger = new Logger({
         enabled: true,
         name: 'befriendly-shared-perspectiveapi',
@@ -77,6 +81,13 @@ export class TwitchAuth {
 
   public async check (msgText: string) {
     if (this.enabled) {
+      // Set nextRequest.
+      this.nextRequest =
+        new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10))
+
+      // Wait until nextRequest.
+      await new Promise(resolve => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()))
+
       const searchParams = {
         key: this.token
       }
