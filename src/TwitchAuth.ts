@@ -13,6 +13,19 @@ export interface TwitchUsersBody {
   view_count: number
 }
 
+export interface TwitchStreamsBody {
+  id: string
+  user_id: string
+  user_name: string
+  game_id: string
+  type: 'live' | ''
+  title: string
+  viewer_count: number
+  started_at: string
+  language: string
+  thumbnail_url: string
+}
+
 export interface TwitchAuthBody {
   access_token: string
   refresh_token: string
@@ -123,6 +136,24 @@ export class TwitchAuth {
       }
     } catch (error) {
       this.logger.error({ err: error }, 'Twitch.getUser()')
+      return null
+    }
+  }
+
+  public async getStream (token: string, usernames: string[]): Promise<TwitchStreamsBody[] | null> {
+    try {
+      const { body }: any = await fetch.get(`https://api.twitch.tv/helix/streams?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&user_login=' + i : 'user_login=' + i).join('') : ''}`, {
+        headers: {
+          ...this.headers,
+          'Client-ID': this.clientToken,
+          Authorization: `Bearer ${token}`,
+        },
+        responseType: 'json',
+      })
+
+      return body.data.length > 0 ? body.data as TwitchStreamsBody[] : null
+    } catch (error) {
+      this.logger.error({ err: error }, 'Twitch.getStream()')
       return null
     }
   }

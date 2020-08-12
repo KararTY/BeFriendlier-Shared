@@ -10,6 +10,18 @@ export interface TwitchUsersBody {
     offline_image_url: string;
     view_count: number;
 }
+export interface TwitchStreamsBody {
+    id: string;
+    user_id: string;
+    user_name: string;
+    game_id: string;
+    type: 'live' | '';
+    title: string;
+    viewer_count: number;
+    started_at: string;
+    language: string;
+    thumbnail_url: string;
+}
 export interface TwitchAuthBody {
     access_token: string;
     refresh_token: string;
@@ -43,6 +55,7 @@ export declare class TwitchAuth {
     requestAppToken(): Promise<TwitchAuthBody | null>;
     getUser(token: string): Promise<TwitchUsersBody | null>;
     getUser(token: string, usernames?: string[]): Promise<TwitchUsersBody[] | null>;
+    getStream(token: string, usernames: string[]): Promise<TwitchStreamsBody[] | null>;
     refreshToken(token: string): Promise<TwitchAuthBody | null>;
     validateToken(token: string): Promise<TwitchValidateBody | null>;
     authorizationURL(csrfToken: string): string;
