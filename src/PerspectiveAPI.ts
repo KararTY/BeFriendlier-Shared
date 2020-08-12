@@ -86,7 +86,7 @@ export class PerspectiveAPI {
         new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10))
 
       // Wait until nextRequest.
-      await new Promise(resolve => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()))
+      await new Promise((resolve) => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()))
 
       const searchParams = {
         key: this.token
@@ -104,7 +104,7 @@ export class PerspectiveAPI {
       }
 
       try {
-        const { body }: any = await fetch.post(`https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze`, {
+        const { body }: any = await fetch.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
           headers: { ...this.headers },
           searchParams,
           body: JSON.stringify(request),
