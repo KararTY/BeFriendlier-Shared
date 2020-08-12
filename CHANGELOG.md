@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.2.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.3...v6.2.0) (2020-08-12)
+
+
+### Features
+
+* Add Twitch.getStream() ([db66df5](https://github.com/KararTY/BeFriendlier-Shared/commit/db66df5165cce6e49cf59346ec430d1f549c743e))
+
 ### [6.1.3](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.2...v6.1.3) (2020-08-11)
 
 
