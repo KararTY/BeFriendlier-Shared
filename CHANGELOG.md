@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.2.0...v6.3.0) (2020-09-29)
+
+
+### Features
+
+* Add types GIVEEMOTES & PROFILES. ([24b803d](https://github.com/KararTY/BeFriendlier-Shared/commit/24b803d22e7aaf4f31980cc72f6bc7c692f50ff5))
+
+## [6.2.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.3...v6.2.0) (2020-08-12)
+
+
+### Features
+
+* Add Twitch.getStream() ([db66df5](https://github.com/KararTY/BeFriendlier-Shared/commit/db66df5165cce6e49cf59346ec430d1f549c743e))
+
+### [6.1.3](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.2...v6.1.3) (2020-08-11)
+
+
+### Bug Fixes
+
+* attributeScores object values are type string* ([fc5517a](https://github.com/KararTY/BeFriendlier-Shared/commit/fc5517a24070588e5e8d80007b95be343fdf1986))
+
+### [6.1.2](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.0...v6.1.2) (2020-08-11)
+
+
+### Bug Fixes
+
+* Implement throttling of perspective api. ([b90bfa8](https://github.com/KararTY/BeFriendlier-Shared/commit/b90bfa8b696d75092434c5f112fabea33c84aa55))
+
 ### [6.1.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.0...v6.1.1) (2020-08-11)
 
 

@@ -23,7 +23,7 @@ export interface PerspectiveAPIRequest {
 }
 export interface PerspectiveAPIResponse {
     attributeScores: {
-        string: {
+        [key: string]: {
             summaryScore: {
                 value: number;
                 type: string;
@@ -43,13 +43,16 @@ export interface PerspectiveAPIResponse {
 }
 interface Config {
     token: string;
+    throttleInMs: number;
     headers: Headers;
 }
 export declare class PerspectiveAPI {
     private token;
     private enabled;
     private readonly headers;
+    private throttleInMs;
     private logger;
+    private nextRequest;
     constructor(config: Config, loggerLevel: string);
     check(msgText: string): Promise<PerspectiveAPIResponse | null>;
 }

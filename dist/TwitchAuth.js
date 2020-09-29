@@ -80,6 +80,19 @@ class TwitchAuth {
             return null;
         }
     }
+    async getStream(token, usernames) {
+        try {
+            const { body } = await got_1.default.get(`https://api.twitch.tv/helix/streams?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&user_login=' + i : 'user_login=' + i).join('') : ''}`, {
+                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `Bearer ${token}` }),
+                responseType: 'json',
+            });
+            return body.data.length > 0 ? body.data : null;
+        }
+        catch (error) {
+            this.logger.error({ err: error }, 'Twitch.getStream()');
+            return null;
+        }
+    }
     async refreshToken(token) {
         const searchParams = {
             client_id: this.clientToken,
@@ -125,3 +138,4 @@ class TwitchAuth {
     }
 }
 exports.TwitchAuth = TwitchAuth;
+//# sourceMappingURL=TwitchAuth.js.map
