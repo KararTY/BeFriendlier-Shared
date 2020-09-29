@@ -26,7 +26,7 @@ class PerspectiveAPI {
         if (this.enabled) {
             this.nextRequest =
                 new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10));
-            await new Promise(resolve => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()));
+            await new Promise((resolve) => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()));
             const searchParams = {
                 key: this.token
             };
@@ -39,7 +39,7 @@ class PerspectiveAPI {
                 }
             };
             try {
-                const { body } = await got_1.default.post(`https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze`, {
+                const { body } = await got_1.default.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
                     headers: Object.assign({}, this.headers),
                     searchParams,
                     body: JSON.stringify(request),
