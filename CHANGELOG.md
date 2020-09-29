@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.2.0...v6.3.0) (2020-09-29)
+
+
+### Features
+
+* Add types GIVEEMOTES & PROFILES. ([24b803d](https://github.com/KararTY/BeFriendlier-Shared/commit/24b803d22e7aaf4f31980cc72f6bc7c692f50ff5))
+
 ## [6.2.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.3...v6.2.0) (2020-08-12)
 
 
