@@ -40,7 +40,7 @@ class PerspectiveAPI {
             };
             try {
                 const { body } = await got_1.default.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
-                    headers: Object.assign({}, this.headers),
+                    headers: { ...this.headers },
                     searchParams,
                     body: JSON.stringify(request),
                     responseType: 'json',

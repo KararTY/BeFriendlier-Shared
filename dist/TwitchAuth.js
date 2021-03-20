@@ -31,7 +31,7 @@ class TwitchAuth {
         };
         try {
             const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
-                headers: Object.assign({}, this.headers),
+                headers: { ...this.headers },
                 searchParams,
                 responseType: 'json',
             });
@@ -51,7 +51,7 @@ class TwitchAuth {
         };
         try {
             const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
-                headers: Object.assign({}, this.headers),
+                headers: { ...this.headers },
                 searchParams,
                 responseType: 'json',
             });
@@ -65,7 +65,11 @@ class TwitchAuth {
     async getUser(token, usernames) {
         try {
             const { body } = await got_1.default.get(`https://api.twitch.tv/helix/users?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&login=' + i : 'login=' + i).join('') : ''}`, {
-                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `Bearer ${token}` }),
+                headers: {
+                    ...this.headers,
+                    'Client-ID': this.clientToken,
+                    Authorization: `Bearer ${token}`,
+                },
                 responseType: 'json',
             });
             if (usernames instanceof Array) {
@@ -83,7 +87,11 @@ class TwitchAuth {
     async getStream(token, usernames) {
         try {
             const { body } = await got_1.default.get(`https://api.twitch.tv/helix/streams?${usernames instanceof Array ? usernames.map((i, ind) => ind > 0 ? '&user_login=' + i : 'user_login=' + i).join('') : ''}`, {
-                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `Bearer ${token}` }),
+                headers: {
+                    ...this.headers,
+                    'Client-ID': this.clientToken,
+                    Authorization: `Bearer ${token}`,
+                },
                 responseType: 'json',
             });
             return body.data.length > 0 ? body.data : null;
@@ -103,7 +111,7 @@ class TwitchAuth {
         };
         try {
             const { body } = await got_1.default.post('https://id.twitch.tv/oauth2/token', {
-                headers: Object.assign({}, this.headers),
+                headers: { ...this.headers },
                 searchParams,
                 responseType: 'json',
             });
@@ -117,7 +125,11 @@ class TwitchAuth {
     async validateToken(token) {
         try {
             const { body } = await got_1.default.get('https://id.twitch.tv/oauth2/validate', {
-                headers: Object.assign(Object.assign({}, this.headers), { 'Client-ID': this.clientToken, Authorization: `OAuth ${token}` }),
+                headers: {
+                    ...this.headers,
+                    'Client-ID': this.clientToken,
+                    Authorization: `OAuth ${token}`,
+                },
                 responseType: 'json',
             });
             return body;
