@@ -68,6 +68,7 @@ export interface Token {
 export interface Emote {
   name: string
   id: string
+  amount?: number
 }
 
 export interface EMOTES extends BASE {
