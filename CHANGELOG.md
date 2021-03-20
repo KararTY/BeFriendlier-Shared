@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * Actually export PerspectiveAPI. ([152af24](https://github.com/KararTY/BeFriendlier-Shared/commit/152af243d3c93cdb8477b75a52f32e1f0356b448))
 
+
 ## [6.3.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.2.0...v6.3.0) (2020-09-29)
 
 
