@@ -15,7 +15,7 @@ export declare enum MessageType {
     TAKEABREAK = "TAB",
     TOKEN = "T",
     BIO = "B",
-    GIVE = "G",
+    GIVEEMOTES = "GE",
     PROFILES = "PR"
 }
 export interface NameAndId {
@@ -65,7 +65,7 @@ export interface EMOTES extends BASE {
 export interface BIO extends BASE {
     bio: string;
 }
-export interface GIVE extends BASE {
+export interface GIVEEMOTES extends BASE {
     recipientUserTwitch: NameAndId;
     emotes: Emote[];
 }
