@@ -148,6 +148,23 @@ class TwitchAuth {
         url += `&state=${csrfToken}`;
         return url;
     }
+    async getGlobalEmotes(token) {
+        try {
+            const { body } = await got_1.default.get('https://api.twitch.tv/helix/chat/emotes/global', {
+                headers: {
+                    ...this.headers,
+                    'Client-ID': this.clientToken,
+                    Authorization: `OAuth ${token}`,
+                },
+                responseType: 'json',
+            });
+            return body;
+        }
+        catch (error) {
+            this.logger.error({ err: error }, 'Twitch.validateToken()');
+            return null;
+        }
+    }
 }
 exports.TwitchAuth = TwitchAuth;
 //# sourceMappingURL=TwitchAuth.js.map

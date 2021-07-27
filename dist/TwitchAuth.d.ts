@@ -36,6 +36,15 @@ export interface TwitchValidateBody {
     scope: string[];
     user_id: string;
 }
+export interface TwitchGlobalEmotes {
+    id: string;
+    name: string;
+    images: {
+        url_1x: string;
+        url_2x: string;
+        url_4x: string;
+    };
+}
 interface Config {
     clientToken: string;
     clientSecret: string;
@@ -59,5 +68,6 @@ export declare class TwitchAuth {
     refreshToken(token: string): Promise<TwitchAuthBody | null>;
     validateToken(token: string): Promise<TwitchValidateBody | null>;
     authorizationURL(csrfToken: string): string;
+    getGlobalEmotes(token: string): Promise<TwitchGlobalEmotes[] | null>;
 }
 export {};

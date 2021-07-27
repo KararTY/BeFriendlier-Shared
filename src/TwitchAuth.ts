@@ -42,6 +42,16 @@ export interface TwitchValidateBody {
   user_id: string
 }
 
+export interface TwitchGlobalEmotes {
+  id: string
+  name: string
+  images: {
+    url_1x: string
+    url_2x: string
+    url_4x: string
+  }
+}
+
 interface Config {
   clientToken: string
   clientSecret: string
@@ -209,5 +219,23 @@ export class TwitchAuth {
     url += `&state=${csrfToken}`
 
     return url
+  }
+
+  public async getGlobalEmotes (token: string): Promise<TwitchGlobalEmotes[] | null> {
+    try {
+      const { body }: any = await fetch.get('https://api.twitch.tv/helix/chat/emotes/global', {
+        headers: {
+          ...this.headers,
+          'Client-ID': this.clientToken,
+          Authorization: `OAuth ${token}`,
+        },
+        responseType: 'json',
+      })
+
+      return body as TwitchGlobalEmotes[]
+    } catch (error) {
+      this.logger.error({ err: error }, 'Twitch.validateToken()')
+      return null
+    }
   }
 }
