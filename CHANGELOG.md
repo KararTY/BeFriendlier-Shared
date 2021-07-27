@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.3.1...v6.4.0) (2021-07-27)
+
+
+### Features
+
+* Add getGlobalEmotes ([649433e](https://github.com/KararTY/BeFriendlier-Shared/commit/649433e1ee33037bcfb93f7b20713b703118beb8))
+* Emote interface to conditionally have amount ([e453d3e](https://github.com/KararTY/BeFriendlier-Shared/commit/e453d3e2d93394050fea0f54d5b217d06693722e))
+
+
+### Bug Fixes
+
+* Build changes ([593320d](https://github.com/KararTY/BeFriendlier-Shared/commit/593320d0bcacb18cd4abe300fbdc238acfb9b361))
+
 ### [6.3.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.3.0...v6.3.1) (2021-03-20)
 
 
