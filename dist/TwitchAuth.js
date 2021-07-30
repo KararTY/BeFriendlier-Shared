@@ -158,7 +158,7 @@ class TwitchAuth {
                 },
                 responseType: 'json',
             });
-            return body;
+            return body.data;
         }
         catch (error) {
             this.logger.error({ err: error }, 'Twitch.getGlobalEmotes()');

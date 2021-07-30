@@ -232,7 +232,7 @@ export class TwitchAuth {
         responseType: 'json',
       })
 
-      return body as TwitchGlobalEmotes[]
+      return body.data as TwitchGlobalEmotes[]
     } catch (error) {
       this.logger.error({ err: error }, 'Twitch.getGlobalEmotes()')
       return null
