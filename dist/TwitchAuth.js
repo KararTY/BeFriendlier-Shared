@@ -15,7 +15,7 @@ class TwitchAuth {
         this.headers = config.headers;
         this.logger = new standalone_1.Logger({
             enabled: true,
-            name: 'befriendly-shared-twitchauth',
+            name: 'befriendlier-shared-twitchauth',
             level: loggerLevel,
             prettyPrint: process.env.NODE_ENV === 'development',
         });
@@ -154,14 +154,14 @@ class TwitchAuth {
                 headers: {
                     ...this.headers,
                     'Client-ID': this.clientToken,
-                    Authorization: `OAuth ${token}`,
+                    Authorization: `Bearer ${token}`,
                 },
                 responseType: 'json',
             });
             return body;
         }
         catch (error) {
-            this.logger.error({ err: error }, 'Twitch.validateToken()');
+            this.logger.error({ err: error }, 'Twitch.getGlobalEmotes()');
             return null;
         }
     }
