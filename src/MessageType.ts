@@ -17,6 +17,7 @@ export enum MessageType {
   BIO = 'B',
   GIVEEMOTES = 'GE',
   PROFILES = 'PR',
+  WHISPER = 'WH'
 }
 
 export interface NameAndId {

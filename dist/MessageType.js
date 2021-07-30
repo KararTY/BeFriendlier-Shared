@@ -21,6 +21,7 @@ var MessageType;
     MessageType["BIO"] = "B";
     MessageType["GIVEEMOTES"] = "GE";
     MessageType["PROFILES"] = "PR";
+    MessageType["WHISPER"] = "WH";
 })(MessageType = exports.MessageType || (exports.MessageType = {}));
 var More;
 (function (More) {
