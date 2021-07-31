@@ -66,17 +66,19 @@ export class PerspectiveAPI {
 
   constructor (config: Config, loggerLevel: string) {
     if (config.token) {
-    this.token = config.token
-      this.enabled = true
-      this.headers = config.headers
-      this.throttleInMs = config.throttleInMs
-      this.logger = new Logger({
-        enabled: true,
-        name: 'befriendly-shared-perspectiveapi',
-        level: loggerLevel,
-        prettyPrint: process.env.NODE_ENV === 'development',
-      })
+      return
     }
+
+    this.token = config.token
+    this.enabled = true
+    this.headers = config.headers
+    this.throttleInMs = config.throttleInMs
+    this.logger = new Logger({
+      enabled: true,
+      name: 'befriendlier-shared-perspectiveapi',
+      level: loggerLevel,
+      prettyPrint: process.env.NODE_ENV === 'development',
+    })
   }
 
   public async check (msgText: string) {
@@ -96,11 +98,12 @@ export class PerspectiveAPI {
         comment: {
           text: msgText
         },
-        /** Auto detect for now. */
-        // languages: ["en"],
+        /** Do not auto detect. */
+        languages: ["en"],
         requestedAttributes: {
           TOXICITY: {}
-        }
+        },
+        doNotStore: true
       }
 
       try {
@@ -116,6 +119,7 @@ export class PerspectiveAPI {
         return null
       }
     }
+
     return null
   }
 }

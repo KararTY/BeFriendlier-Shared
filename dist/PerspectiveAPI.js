@@ -10,17 +10,18 @@ class PerspectiveAPI {
     constructor(config, loggerLevel) {
         this.nextRequest = new Date();
         if (config.token) {
-            this.token = config.token;
-            this.enabled = true;
-            this.headers = config.headers;
-            this.throttleInMs = config.throttleInMs;
-            this.logger = new standalone_1.Logger({
-                enabled: true,
-                name: 'befriendly-shared-perspectiveapi',
-                level: loggerLevel,
-                prettyPrint: process.env.NODE_ENV === 'development',
-            });
+            return;
         }
+        this.token = config.token;
+        this.enabled = true;
+        this.headers = config.headers;
+        this.throttleInMs = config.throttleInMs;
+        this.logger = new standalone_1.Logger({
+            enabled: true,
+            name: 'befriendlier-shared-perspectiveapi',
+            level: loggerLevel,
+            prettyPrint: process.env.NODE_ENV === 'development',
+        });
     }
     async check(msgText) {
         if (this.enabled) {
@@ -34,9 +35,11 @@ class PerspectiveAPI {
                 comment: {
                     text: msgText
                 },
+                languages: ["en"],
                 requestedAttributes: {
                     TOXICITY: {}
-                }
+                },
+                doNotStore: true
             };
             try {
                 const { body } = await got_1.default.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
