@@ -65,7 +65,7 @@ export class PerspectiveAPI {
   private nextRequest: Date = new Date()
 
   constructor (config: Config, loggerLevel: string) {
-    if (config.token) {
+    if (!config.token) {
       return
     }
 

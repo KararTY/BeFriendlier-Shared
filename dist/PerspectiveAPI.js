@@ -9,7 +9,7 @@ const standalone_1 = require("@adonisjs/logger/build/standalone");
 class PerspectiveAPI {
     constructor(config, loggerLevel) {
         this.nextRequest = new Date();
-        if (config.token) {
+        if (!config.token) {
             return;
         }
         this.token = config.token;
