@@ -85,3 +85,10 @@ export interface GIVEEMOTES extends BASE {
   recipientUserTwitch: NameAndId
   emotes: Emote[]
 }
+
+export interface REGISTER extends BASE {
+  userTwitch: NameAndId & {
+    avatar: string
+    displayName: string
+  }
+}
