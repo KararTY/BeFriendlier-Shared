@@ -17,7 +17,8 @@ export declare enum MessageType {
     BIO = "B",
     GIVEEMOTES = "GE",
     PROFILES = "PR",
-    WHISPER = "WH"
+    WHISPER = "WH",
+    REGISTER = "R"
 }
 export interface NameAndId {
     name: string;
