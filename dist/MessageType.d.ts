@@ -37,7 +37,7 @@ export declare enum More {
     FAVORITESTREAMERS = "FS"
 }
 export interface ROLLMATCH extends BASE {
-    more: More;
+    more?: More;
 }
 export interface UNMATCH extends BASE {
     matchUserTwitch: NameAndId;

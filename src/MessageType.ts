@@ -41,7 +41,7 @@ export enum More {
 }
 
 export interface ROLLMATCH extends BASE {
-  more: More
+  more?: More
 }
 
 export interface UNMATCH extends BASE {
