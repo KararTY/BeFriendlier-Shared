@@ -58,7 +58,7 @@ interface Config {
 
 export class PerspectiveAPI {
   private token: string
-  private enabled: boolean
+  private enabled: boolean = false
   private readonly headers: Headers
   private throttleInMs: number
   private logger: Logger
@@ -69,10 +69,11 @@ export class PerspectiveAPI {
       return
     }
 
-    this.token = config.token
     this.enabled = true
+    this.token = config.token
     this.headers = config.headers
     this.throttleInMs = config.throttleInMs
+
     this.logger = new Logger({
       enabled: true,
       name: 'befriendlier-shared-perspectiveapi',
@@ -82,44 +83,45 @@ export class PerspectiveAPI {
   }
 
   public async check (msgText: string) {
-    if (this.enabled) {
-      // Set nextRequest.
-      this.nextRequest =
-        new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10))
-
-      // Wait until nextRequest.
-      await new Promise((resolve) => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()))
-
-      const searchParams = {
-        key: this.token
-      }
-
-      const request: PerspectiveAPIRequest = {
-        comment: {
-          text: msgText
-        },
-        /** Do not auto detect. */
-        languages: ["en"],
-        requestedAttributes: {
-          TOXICITY: {}
-        },
-        doNotStore: true
-      }
-
-      try {
-        const { body }: any = await fetch.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
-          headers: { ...this.headers },
-          searchParams,
-          body: JSON.stringify(request),
-          responseType: 'json',
-        })
-        return body as PerspectiveAPIResponse
-      } catch (error) {
-        this.logger.error({ err: error }, 'PerspectiveAPI.check()')
-        return null
-      }
+    if (!this.enabled) {
+      return null
     }
 
-    return null
+    // Set nextRequest.
+    this.nextRequest =
+      new Date((this.nextRequest.getTime() - new Date().getTime()) + Date.now() + this.throttleInMs + (Math.random() * 10))
+
+    // Wait until nextRequest.
+    await new Promise((resolve) => setTimeout(resolve, this.nextRequest.getTime() - new Date().getTime()))
+
+    const searchParams = {
+      key: this.token
+    }
+
+    const request: PerspectiveAPIRequest = {
+      comment: {
+        text: msgText
+      },
+      /** Do not auto detect. */
+      languages: ["en"],
+      requestedAttributes: {
+        TOXICITY: {}
+      },
+      doNotStore: true
+    }
+
+    try {
+      const { body }: any = await fetch.post('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze', {
+        headers: { ...this.headers },
+        searchParams,
+        body: JSON.stringify(request),
+        responseType: 'json',
+      })
+
+      return body as PerspectiveAPIResponse
+    } catch (error) {
+      this.logger.error({ err: error }, 'PerspectiveAPI.check()')
+      return null
+    }
   }
 }
