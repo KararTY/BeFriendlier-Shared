@@ -122,9 +122,8 @@ export class PajbotAPI {
     }
 
     try {
-      const { body }: any = await fetch.get(channel.url, {
+      const { body }: any = await fetch.get(channel.url + `?message=${message}`, {
         headers: { ...this.headers },
-        searchParams: { message },
         responseType: 'json',
       })
 
