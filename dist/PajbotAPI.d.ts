@@ -15,9 +15,18 @@ export interface PajbotAPIResponse {
         case_sensitive: boolean;
     };
 }
+export interface Pajbot2APIResponse {
+    banned: boolean;
+    message: string;
+    filter_data?: {
+        mute_type: number;
+        reason: string;
+    }[];
+}
 interface Channel {
     name: string;
     url: string;
+    v2?: string;
 }
 interface Config {
     enabled: boolean;
@@ -31,5 +40,6 @@ export declare class PajbotAPI {
     private logger;
     constructor(config: Config, loggerLevel: string);
     check(channelName: string, message: string): Promise<PajbotAPIResponse | null>;
+    checkVersion2(channelName: string, message: string): Promise<Pajbot2APIResponse | null>;
 }
 export {};

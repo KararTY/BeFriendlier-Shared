@@ -4,11 +4,13 @@ exports.pajbotList = void 0;
 exports.pajbotList = [
     {
         "name": "DEFAULT",
-        "url": "https://forsen.tv/api/v1/banphrases/test"
+        "url": "https://forsen.tv/api/v1/banphrases/test",
+        "v2": "https://paj.pajbot.com/api/channel/22484632/moderation/check_message"
     },
     {
         "name": "forsen",
-        "url": "https://forsen.tv/api/v1/banphrases/test"
+        "url": "https://forsen.tv/api/v1/banphrases/test",
+        "v2": "https://paj.pajbot.com/api/channel/22484632/moderation/check_message"
     },
     {
         "name": "smaczny",
@@ -24,7 +26,8 @@ exports.pajbotList = [
     },
     {
         "name": "zneix",
-        "url": "https://twitchbot.zneix.eu/api/v1/banphrases/test"
+        "url": "https://twitchbot.zneix.eu/api/v1/banphrases/test",
+        "v2": "https://pb2.zneix.eu/api/channel/99631238/moderation/check_message"
     }
 ];
 //# sourceMappingURL=pajbotList.js.map

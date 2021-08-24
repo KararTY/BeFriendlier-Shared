@@ -7,6 +7,10 @@ exports.PajbotAPI = void 0;
 const got_1 = __importDefault(require("got"));
 const standalone_1 = require("@adonisjs/logger/build/standalone");
 const pajbotList_1 = require("./pajbotList");
+const _default_ = {
+    url: 'https://forsen.tv/api/v1/banphrases/test',
+    v2: 'https://paj.pajbot.com/api/channel/22484632/moderation/check_message',
+};
 class PajbotAPI {
     constructor(config, loggerLevel) {
         this.enabled = false;
@@ -29,7 +33,7 @@ class PajbotAPI {
         }
         let channel = this.channels.find(ch => ch.name === channelName);
         if (!channel) {
-            channel = this.channels.find(ch => ch.name === 'DEFAULT') || { url: 'https://forsen.tv/api/v1/banphrases/test' };
+            channel = this.channels.find(ch => ch.name === 'DEFAULT') || { url: _default_.url };
         }
         const request = { message };
         try {
@@ -42,6 +46,30 @@ class PajbotAPI {
         }
         catch (error) {
             this.logger.error({ err: error }, 'PajbotAPI.check()');
+            return null;
+        }
+    }
+    async checkVersion2(channelName, message) {
+        if (!this.enabled) {
+            return { banned: false };
+        }
+        let channel = this.channels.find(ch => ch.name === channelName);
+        if (!channel) {
+            channel = this.channels.find(ch => ch.name === 'DEFAULT') || { v2: _default_.v2 };
+        }
+        if (!channel.v2) {
+            channel.v2 = _default_.v2;
+        }
+        try {
+            const { body } = await got_1.default.get(channel.url, {
+                headers: { ...this.headers },
+                searchParams: { message },
+                responseType: 'json',
+            });
+            return body;
+        }
+        catch (error) {
+            this.logger.error({ err: error }, 'PajbotAPI.checkVersion2()');
             return null;
         }
     }
