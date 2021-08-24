@@ -2,6 +2,11 @@ import fetch, { Headers } from 'got'
 import { Logger } from '@adonisjs/logger/build/standalone'
 import { pajbotList } from './pajbotList'
 
+const _default_ = {
+  url: 'https://forsen.tv/api/v1/banphrases/test',
+  v2: 'https://paj.pajbot.com/api/channel/22484632/moderation/check_message',
+}
+
 /** [Pajbot API help](https://gist.github.com/pajlada/57464e519ba8d195a97ddcd0755f9715) */
 export interface PajbotAPIRequest {
   message: string
@@ -22,9 +27,19 @@ export interface PajbotAPIResponse {
   }
 }
 
+export interface Pajbot2APIResponse {
+  banned: boolean
+  message: string
+  filter_data?: {
+    mute_type: number
+    reason: string
+  }[]
+}
+
 interface Channel {
   name: string
   url: string
+  v2?: string
 }
 
 interface Config {
@@ -68,7 +83,7 @@ export class PajbotAPI {
 
     if (!channel) {
       // Maybe, just maybe, someone deletes "DEFAULT". So for that reason, HARDCODE IT.
-      channel = this.channels.find(ch => ch.name === 'DEFAULT') as Channel || { url: 'https://forsen.tv/api/v1/banphrases/test' }
+      channel = this.channels.find(ch => ch.name === 'DEFAULT') as Channel || { url: _default_.url }
     }
   
     const request: PajbotAPIRequest = { message }
@@ -83,6 +98,39 @@ export class PajbotAPI {
       return body as PajbotAPIResponse
     } catch (error) {
       this.logger.error({ err: error }, 'PajbotAPI.check()')
+      return null
+    }
+  }
+
+  /**
+   * Pajbot2 banphrases. Currently used for message height checking.
+   */
+  public async checkVersion2 (channelName: string, message: string) {
+    if (!this.enabled) {
+      return { banned: false } as Pajbot2APIResponse
+    }
+
+    let channel = this.channels.find(ch => ch.name === channelName)
+
+    if (!channel) {
+      // Maybe, just maybe, someone deletes "DEFAULT". So for that reason, HARDCODE IT.
+      channel = this.channels.find(ch => ch.name === 'DEFAULT') as Channel || { v2: _default_.v2 }
+    }
+
+    if (!channel.v2) {
+      channel.v2 = _default_.v2
+    }
+
+    try {
+      const { body }: any = await fetch.get(channel.url, {
+        headers: { ...this.headers },
+        searchParams: { message },
+        responseType: 'json',
+      })
+
+      return body as Pajbot2APIResponse
+    } catch (error) {
+      this.logger.error({ err: error }, 'PajbotAPI.checkVersion2()')
       return null
     }
   }
