@@ -61,9 +61,8 @@ class PajbotAPI {
             channel.v2 = _default_.v2;
         }
         try {
-            const { body } = await got_1.default.get(channel.url, {
+            const { body } = await got_1.default.get(channel.url + `?message=${message}`, {
                 headers: { ...this.headers },
-                searchParams: { message },
                 responseType: 'json',
             });
             return body;
