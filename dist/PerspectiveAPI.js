@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PerspectiveAPI = void 0;
 const got_1 = __importDefault(require("got"));
-const standalone_1 = require("@adonisjs/logger/build/standalone");
+const logger_1 = require("@adonisjs/logger");
 class PerspectiveAPI {
     constructor(config, loggerLevel) {
         this.enabled = false;
@@ -17,7 +17,7 @@ class PerspectiveAPI {
         this.token = config.token;
         this.headers = config.headers;
         this.throttleInMs = config.throttleInMs;
-        this.logger = new standalone_1.Logger({
+        this.logger = new logger_1.Logger({
             enabled: true,
             name: 'befriendlier-shared-perspectiveapi',
             level: loggerLevel,

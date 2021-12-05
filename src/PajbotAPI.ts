@@ -1,5 +1,5 @@
 import fetch, { Headers } from 'got'
-import { Logger } from '@adonisjs/logger/build/standalone'
+import { Logger } from '@adonisjs/logger'
 import { pajbotList } from './pajbotList'
 
 const _default_ = {

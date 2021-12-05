@@ -1,5 +1,5 @@
 import fetch, { Headers } from 'got'
-import { Logger } from '@adonisjs/logger/build/standalone'
+import { Logger } from '@adonisjs/logger'
 
 /** [PerspectiveAPI documentation](https://github.com/conversationai/perspectiveapi/blob/master/2-api/methods.md#analyzecomment-request) */
 export interface PerspectiveAPIRequest {
@@ -39,9 +39,9 @@ export interface PerspectiveAPIResponse {
         begin: number
         end: number
         score: {
-           /** Float */
-           value: number
-           type: string
+          /** Float */
+          value: number
+          type: string
         }
       }[]
     }

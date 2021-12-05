@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PajbotAPI = void 0;
 const got_1 = __importDefault(require("got"));
-const standalone_1 = require("@adonisjs/logger/build/standalone");
+const logger_1 = require("@adonisjs/logger");
 const pajbotList_1 = require("./pajbotList");
 const _default_ = {
     url: 'https://forsen.tv/api/v1/banphrases/test',
@@ -20,7 +20,7 @@ class PajbotAPI {
         this.enabled = true;
         this.channels = config.channels.length ? config.channels : pajbotList_1.pajbotList;
         this.headers = config.headers;
-        this.logger = new standalone_1.Logger({
+        this.logger = new logger_1.Logger({
             enabled: true,
             name: 'befriendlier-shared-pajbotapi',
             level: loggerLevel,
