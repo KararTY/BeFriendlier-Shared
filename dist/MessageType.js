@@ -23,6 +23,7 @@ var MessageType;
     MessageType["PROFILES"] = "PR";
     MessageType["WHISPER"] = "WH";
     MessageType["REGISTER"] = "R";
+    MessageType["BATTLE"] = "BA";
 })(MessageType = exports.MessageType || (exports.MessageType = {}));
 var More;
 (function (More) {

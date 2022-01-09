@@ -18,7 +18,8 @@ export enum MessageType {
   GIVEEMOTES = 'GE',
   PROFILES = 'PR',
   WHISPER = 'WH',
-  REGISTER = 'R'
+  REGISTER = 'R',
+  BATTLE = 'BA',
 }
 
 export interface NameAndId {
@@ -91,4 +92,8 @@ export interface REGISTER extends BASE {
     avatar: string
     displayName: string
   }
+}
+
+export interface BATTLE extends BASE {
+  targetUserTwitch: NameAndId
 }
