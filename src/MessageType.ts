@@ -31,6 +31,7 @@ export interface NameAndId {
 export interface BASE {
   userTwitch: NameAndId
   channelTwitch: NameAndId
+  messageID?: string
   global?: boolean
   result?: any
 }
