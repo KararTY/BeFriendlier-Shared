@@ -1,6 +1,6 @@
 {
   "name": "befriendlier-shared",
-  "version": "6.3.0",
+  "version": "6.4.1",
   "description": "",
   "private": true,
   "main": "dist/index.js",
@@ -17,16 +17,18 @@
   },
   "homepage": "https://github.com/KararTY/BeFriendlier-Shared#readme",
   "devDependencies": {
-    "adonis-preset-ts": "^1.0.4",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-config-standard-with-typescript": "^18.0.2",
-    "eslint-plugin-adonis": "^1.0.14",
+    "adonis-preset-ts": "^2.1.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint": "^8.21.0",
     "rimraf": "^3.0.2",
-    "standard-version": "^8.0.2",
-    "typescript": "^3.9.7"
+    "standard-version": "^9.5.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@adonisjs/logger": "^2.1.0",
-    "got": "^11.5.1"
+    "@adonisjs/logger": "^4.1.4",
+    "got": "^11.8.5",
+    "pino-pretty": "=7.2.0"
   }
 }

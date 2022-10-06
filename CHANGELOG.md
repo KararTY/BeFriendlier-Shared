@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.3.1...v6.4.0) (2021-07-27)
+
+
+### Features
+
+* Add getGlobalEmotes ([649433e](https://github.com/KararTY/BeFriendlier-Shared/commit/649433e1ee33037bcfb93f7b20713b703118beb8))
+* Emote interface to conditionally have amount ([e453d3e](https://github.com/KararTY/BeFriendlier-Shared/commit/e453d3e2d93394050fea0f54d5b217d06693722e))
+
+
+### Bug Fixes
+
+* Build changes ([593320d](https://github.com/KararTY/BeFriendlier-Shared/commit/593320d0bcacb18cd4abe300fbdc238acfb9b361))
+
+### [6.3.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.3.0...v6.3.1) (2021-03-20)
+
+
+### Bug Fixes
+
+* Build GIVEEMOTES ([89d405b](https://github.com/KararTY/BeFriendlier-Shared/commit/89d405bf2694ce84f03a7d3bbfdcd6d6cbf78c90))
+* Build perspective api & twitch auth files ([744730f](https://github.com/KararTY/BeFriendlier-Shared/commit/744730f327145c204f2e50969323ac52b2dbbe6f))
+
+### [6.1.1](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.1.0...v6.1.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* Actually export PerspectiveAPI. ([152af24](https://github.com/KararTY/BeFriendlier-Shared/commit/152af243d3c93cdb8477b75a52f32e1f0356b448))
+
 ## [6.3.0](https://github.com/KararTY/BeFriendlier-Shared/compare/v6.2.0...v6.3.0) (2020-09-29)
 
 

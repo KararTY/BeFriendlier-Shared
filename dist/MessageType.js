@@ -19,8 +19,12 @@ var MessageType;
     MessageType["TAKEABREAK"] = "TAB";
     MessageType["TOKEN"] = "T";
     MessageType["BIO"] = "B";
-    MessageType["GIVE"] = "G";
-    MessageType["PROFILES"] = "PR";
+    MessageType["GIVEEMOTES"] = "GE";
+    MessageType["PROFILE"] = "PR";
+    MessageType["PROFILES"] = "PRS";
+    MessageType["WHISPER"] = "WH";
+    MessageType["REGISTER"] = "R";
+    MessageType["BATTLE"] = "BA";
 })(MessageType = exports.MessageType || (exports.MessageType = {}));
 var More;
 (function (More) {

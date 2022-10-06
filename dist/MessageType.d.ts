@@ -15,8 +15,12 @@ export declare enum MessageType {
     TAKEABREAK = "TAB",
     TOKEN = "T",
     BIO = "B",
-    GIVE = "G",
-    PROFILES = "PR"
+    GIVEEMOTES = "GE",
+    PROFILE = "PR",
+    PROFILES = "PRS",
+    WHISPER = "WH",
+    REGISTER = "R",
+    BATTLE = "BA"
 }
 export interface NameAndId {
     name: string;
@@ -25,6 +29,7 @@ export interface NameAndId {
 export interface BASE {
     userTwitch: NameAndId;
     channelTwitch: NameAndId;
+    messageID?: string;
     global?: boolean;
     result?: any;
 }
@@ -35,7 +40,7 @@ export declare enum More {
     FAVORITESTREAMERS = "FS"
 }
 export interface ROLLMATCH extends BASE {
-    more: More;
+    more?: More;
 }
 export interface UNMATCH extends BASE {
     matchUserTwitch: NameAndId;
@@ -58,6 +63,7 @@ export interface Token {
 export interface Emote {
     name: string;
     id: string;
+    amount?: number;
 }
 export interface EMOTES extends BASE {
     emotes: Emote[];
@@ -65,7 +71,18 @@ export interface EMOTES extends BASE {
 export interface BIO extends BASE {
     bio: string;
 }
-export interface GIVE extends BASE {
+export interface GIVEEMOTES extends BASE {
     recipientUserTwitch: NameAndId;
     emotes: Emote[];
+}
+export interface REGISTER extends BASE {
+    userTwitch: NameAndId & {
+        avatar: string;
+        displayName: string;
+    };
+}
+export interface BATTLE extends BASE {
+    targetUserTwitch: NameAndId;
+}
+export interface PROFILE extends BASE, BIO, EMOTES {
 }

@@ -1,5 +1,5 @@
 import fetch, { Headers } from 'got'
-import { Logger } from '@adonisjs/logger/build/standalone'
+import { Logger } from '@adonisjs/logger'
 
 export interface TwitchUsersBody {
   id: string
@@ -42,6 +42,16 @@ export interface TwitchValidateBody {
   user_id: string
 }
 
+export interface TwitchGlobalEmotes {
+  id: string
+  name: string
+  images: {
+    url_1x: string
+    url_2x: string
+    url_4x: string
+  }
+}
+
 interface Config {
   clientToken: string
   clientSecret: string
@@ -66,7 +76,7 @@ export class TwitchAuth {
     this.headers = config.headers
     this.logger = new Logger({
       enabled: true,
-      name: 'befriendly-shared-twitchauth',
+      name: 'befriendlier-shared-twitchauth',
       level: loggerLevel,
       prettyPrint: process.env.NODE_ENV === 'development',
     })
@@ -209,5 +219,23 @@ export class TwitchAuth {
     url += `&state=${csrfToken}`
 
     return url
+  }
+
+  public async getGlobalEmotes (token: string): Promise<TwitchGlobalEmotes[] | null> {
+    try {
+      const { body }: any = await fetch.get('https://api.twitch.tv/helix/chat/emotes/global', {
+        headers: {
+          ...this.headers,
+          'Client-ID': this.clientToken,
+          Authorization: `Bearer ${token}`,
+        },
+        responseType: 'json',
+      })
+
+      return body.data as TwitchGlobalEmotes[]
+    } catch (error) {
+      this.logger.error({ err: error }, 'Twitch.getGlobalEmotes()')
+      return null
+    }
   }
 }
